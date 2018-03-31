@@ -1,5 +1,6 @@
 package ua.nure.strebkov.Practice2;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class MyListImpl implements MyList, ListIterable {
@@ -7,10 +8,7 @@ public class MyListImpl implements MyList, ListIterable {
 	private Object[] arr = {};
 
 	/**
-	 * appends the specified element to the end of this list
-	 * 
-	 * @param Object
-	 *            e
+	 * appends the specified element to the end of this list.
 	 */
 	@Override
 	public void add(Object e) {
@@ -21,7 +19,7 @@ public class MyListImpl implements MyList, ListIterable {
 	}
 
 	/**
-	 * removes all of the elements from this list
+	 * removes all of the elements from this list.
 	 */
 	@Override
 	public void clear() {
@@ -29,10 +27,7 @@ public class MyListImpl implements MyList, ListIterable {
 	}
 
 	/**
-	 * removes the first occurrence of the specified element from this list
-	 * 
-	 * @param Object
-	 *            o;
+	 * removes the first occurrence of the specified element from this list.
 	 */
 	@Override
 	public boolean remove(Object o) {
@@ -50,7 +45,7 @@ public class MyListImpl implements MyList, ListIterable {
 
 	/**
 	 * returns an array containing all of the elements in this list in proper
-	 * sequence
+	 * sequence.
 	 */
 	@Override
 	public Object[] toArray() {
@@ -62,7 +57,7 @@ public class MyListImpl implements MyList, ListIterable {
 	}
 
 	/**
-	 * returns the number of elements in this list
+	 * returns the number of elements in this list.
 	 */
 	@Override
 	public int size() {
@@ -70,10 +65,7 @@ public class MyListImpl implements MyList, ListIterable {
 	}
 
 	/**
-	 * returns true if this list contains the specified element
-	 * 
-	 * @param Object
-	 *            o;
+	 * returns true if this list contains the specified element.
 	 */
 	@Override
 	public boolean contains(Object o) {
@@ -86,10 +78,7 @@ public class MyListImpl implements MyList, ListIterable {
 	}
 
 	/**
-	 * returns true if this list contains all of the elements of the specified list
-	 * 
-	 * @param MyList
-	 *            c;
+	 * returns true if this list contains all of the elements of the specified list.
 	 */
 
 	@Override
@@ -111,21 +100,11 @@ public class MyListImpl implements MyList, ListIterable {
 	}
 
 	/**
-	 * Override toString()
+	 * Override toString() with java.util.Arrays.
 	 */
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("{");
-		for (int i = 0; i < toArray().length; i++) {
-			if (toArray()[i] == null) {
-				sb.append("[" + "null" + "]");
-				continue;
-			}
-			sb.append("[" + toArray()[i].toString() + "]");
-		}
-		sb.append("}");
-		return sb.toString();
+		return Arrays.toString(arr);
 	}
 
 	public Iterator<Object> iterator() {
